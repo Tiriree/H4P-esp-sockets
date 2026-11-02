@@ -1,0 +1,8 @@
+# Render reads this when you create the service with New -> Blueprint.
+services:
+  - type: web
+    name: esp-sockets-class-example
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
