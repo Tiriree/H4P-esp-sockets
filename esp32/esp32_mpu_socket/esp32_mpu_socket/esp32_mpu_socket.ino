@@ -17,11 +17,11 @@
 const char* WIFI_SSID = "YOUR_WIFI_NAME";
 const char* WIFI_PASS = "YOUR_WIFI_PASSWORD";
 
-// Local relay on the classroom WiFi:
-const char* SERVER_HOST = "esp-sockets-class-example.onrender.com";//without https
+// local relay on the classroom WiFi:
+const char* SERVER_HOST = "h4p-esp-sockets.onrender.com";//your render link without https
 const int   SERVER_PORT = 443;
 const bool  USE_SSL     = true;
-// Public relay on Render (hostname only, no https://):
+// public relay on Render (hostname only, no https://):
 // const char* SERVER_HOST = "esp-sockets-class-example.onrender.com";
 // const int   SERVER_PORT = 443;
 // const bool  USE_SSL     = true;
