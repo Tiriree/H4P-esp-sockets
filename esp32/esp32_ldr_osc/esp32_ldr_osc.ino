@@ -12,8 +12,8 @@
 const char* WIFI_SSID = "YOUR_WIFI_NAME";
 const char* WIFI_PASS = "YOUR_WIFI_PASSWORD";
 
-const char* TARGET_IP   = "192.168.8.199";   // computer that receives the OSC
-const int   TARGET_PORT = 8000;              // port it listens on
+const char* TARGET_IP   = "192.168.4.182";   // computer that receives the OSC
+const int   TARGET_PORT = 7335;              // port it listens on
 
 WiFiUDP udp;
 
@@ -30,8 +30,10 @@ void setup() {
 
 void loop() {
   OSCMessage msg("/ldr");
-  msg.add((int32_t)analogRead(A0));
-
+  float val=analogRead(A0)/3000.00;//sending 0-1
+  // msg.add((int32_t)analogRead(A0));
+  msg.add(val);
+  // Serial.println(val);
   udp.beginPacket(TARGET_IP, TARGET_PORT);
   msg.send(udp);
   udp.endPacket();
